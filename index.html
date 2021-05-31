@@ -1,0 +1,255 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Linguist Grammer Reader</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern, feature-rich Grammer Reader for finding problems, reading solutions & articles, and creating problem sets."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://vqbc.github.io/Linguist/" />
+    <meta property="og:title" content="Linguist Grammer Reader" />
+    <meta
+      property="og:description"
+      content="A modern, feature-rich Grammer Reader for finding problems, reading solutions & articles, and creating problem sets."
+    />
+    <meta
+      property="og:image"
+      content="https://vqbc.github.io/Linguist/icons/favicon-192x192.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Linguist Grammer Reader" />
+    <meta
+      name="twitter:description"
+      content="A modern, feature-rich Grammer Reader for finding problems, reading solutions & articles, and creating problem sets."
+    />
+    <meta
+      name="twitter:image"
+      content="https://vqbc.github.io/Linguist/icons/favicon-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icons/favicon-192x192.png"
+    />
+    <link rel="manifest" href="icons/site.webmanifest" />
+    <meta name="theme-color" content="hsl(191deg, 42%, 42%)" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      if (JSON.parse(localStorage.getItem("darkTheme"))) {
+        document
+          .querySelector("meta[name='color-scheme']")
+          .setAttribute("content", "dark");
+      }
+      if (JSON.parse(localStorage.getItem("darkTheme")) == false) {
+        document
+          .querySelector("meta[name='color-scheme']")
+          .setAttribute("content", "light");
+      }
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-176118017-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-176118017-1");
+    </script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WFF6RGS");
+    </script>
+  </head>
+  <!--⢸⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⡷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⢸⠀⠀are ya coding,⠀⠀⡇⠢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⢸⠀⠀son?⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠈⠑⢦⡀⠀⠀⠀⠀⠀
+    ⢸⠀⠀⠀⠀⢀⠖⠒⠒⠒⢤⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠙⢦⡀⠀⠀⠀⠀
+    ⢸⠀⠀⣀⢤⣼⣀⡠⠤⠤⠼⠤⡄⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠙⢄⠀⠀⠀⠀
+    ⢸⠀⠀⠑⡤⠤⡒⠒⠒⡊⠙⡏⠀⢀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠢⡄⠀
+    ⢸⠀⠀⠀⠇⠀⣀⣀⣀⣀⢀⠧⠟⠁⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀
+    ⢸⠀⠀⠀⠸⣀⠀⠀⠈⢉⠟⠓⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⠀⠈⢱⡖⠋⠁⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⠀⣠⢺⠧⢄⣀⠀⠀⣀⣀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⣠⠃⢸⠀⠀⠈⠉⡽⠿⠯⡆⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⣰⠁⠀⢸⠀⠀⠀⠀⠉⠉⠉⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠣⠀⠀⢸⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⠀⠀⢸⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⠀⠀⡌⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⠀⢠⠃⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+    ⢸⠀⠀⠀⠀⢸⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠷ -->
+  <body>
+    <script>
+      if (
+        JSON.parse(localStorage.getItem("darkTheme")) ||
+        (JSON.parse(localStorage.getItem("darkTheme")) === null &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.body.style = "background: hsl(201deg, 8%, 12%)";
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tagify/3.22.1/tagify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css"
+    />
+    <link
+      href="fonts/tex-gyre-pagella/pagella-regular.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/tex-gyre-pagella/pagella-italic.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/tex-gyre-pagella/pagella-bold.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/computer-modern/bright/bright-regular.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/computer-modern/bright/bright-semi.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/computer-modern/bright/bright-semiitalic.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/computer-modern/sans/sans-bold.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/computer-modern/sans/sans-demi.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      href="fonts/fira-mono/fira-regular.woff2"
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link href="src/fonts.css" rel="stylesheet" />
+    <link id="stylesheet-link" href="src/styles.css" rel="stylesheet" />
+    <script>
+      if (
+        JSON.parse(localStorage.getItem("darkTheme")) ||
+        (JSON.parse(localStorage.getItem("darkTheme")) === null &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        let darkStyles = document.createElement("link");
+        let styles = document.querySelector("#stylesheet-link");
+        darkStyles.id = "dark-stylesheet-link";
+        darkStyles.href = "src/dark.css";
+        darkStyles.rel = "stylesheet";
+        styles.after(darkStyles);
+      }
+    </script>
+    <div class="page-container">
+      <script>
+        if (
+          JSON.parse(localStorage.getItem("darkTheme")) ||
+          (JSON.parse(localStorage.getItem("darkTheme")) === null &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.querySelector(".page-container").style =
+            "background: hsl(201deg, 8%, 15%)";
+        }
+      </script>
+      <header>
+        <h1 class="header">
+          Linguist.
+          <svg width="15" height="30" viewBox="0 0 132.29 264.58" class="logo">
+            <path
+              d="M 34.396002,2.1733e-6 V 264.58 L 0,227.522 V 24.022002 Z"
+              fill="#4499aa"
+            ></path>
+            <path
+              d="M 132.296,40.179 50.274971,0 V 264.58 L 132.296,202.596 Z"
+              fill="#44bbaa"
+            ></path>
+          </svg>
+        </h1>
+        <p class="subtitle">An Grammer Reader for Studying & Practicing</p>
+        <p class="tests-header">
+          Must |  Not  |  Fail  | Mrs.Hampsey's  |  Grammar  |  Test  |
+        </p>
+      </header>
+      <main>
+        <div class="button-container" id="main-button-container">
+          <button type="button" class="button wide-button" id="single-problem">
+            Single Problem
+          </button>
+        </div>
+      </main>
+      <footer>
+        <p class="footer-line settings noprint">
+          <button
+            class="text-button footer-button"
+            id="dark-toggle"
+            tabindex="0"
+        <p class="footer-line siteinfo">
+          ©&nbsp;2021 Roland Yan & Devan Shah |
+        </p>
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.1.1/tagify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.3/katex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.3/contrib/copy-tex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/5.20.2/vega.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/5.1.0/vega-lite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/6.17.0/vega-embed.min.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
